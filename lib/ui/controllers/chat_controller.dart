@@ -31,9 +31,6 @@ class ChatController extends GetxController {
 
     String chatKey = getChatKey(authenticationController.getUid(), uidUser);
 
-   
-
-
     // TODO
     // newEntryStreamSubscription = databaseReference - child msg - child chatKey - listen
     newEntryStreamSubscription = databaseReference
@@ -42,7 +39,6 @@ class ChatController extends GetxController {
         .onChildAdded
         .listen((event) {
       _onEntryAdded(event);
-      
     });
 
     // TODO
@@ -130,11 +126,20 @@ class ChatController extends GetxController {
   void initializeChats() {
     UserController userController = Get.find();
     List<AppUser> users = userController.allUsers();
-    createChat(users[0].uid, users[1].uid, users[0].uid, "Hola B, soy A");
-    createChat(users[1].uid, users[0].uid, users[1].uid, "Hola A, cómo estás?");
-    createChat(users[0].uid, users[2].uid, users[0].uid, "Hola C, soy A");
-    createChat(users[0].uid, users[2].uid, users[2].uid, "Hola A, Cómo estás?");
-    createChat(users[1].uid, users[2].uid, users[1].uid, "Hola C, soy B");
-    createChat(users[2].uid, users[1].uid, users[2].uid, "Todo bien B");
+    createChat(users[0].uid, users[1].uid, users[0].uid,
+        "Hola katherin, soy Luis Diaz");
+    createChat(users[1].uid, users[0].uid, users[1].uid,
+        "Hola Luis Diaz, cómo estás?");
+    createChat(
+        users[0].uid, users[2].uid, users[0].uid, "Hola Jorge, soy Luis Diaz");
+    createChat(users[0].uid, users[2].uid, users[2].uid,
+        "Hola Luis Diaz, Cómo estás?");
+    createChat(
+        users[1].uid, users[2].uid, users[1].uid, "Hola Jorge, soy Katherin");
+    createChat(users[2].uid, users[1].uid, users[2].uid, "Todo bien Katherin");
+    createChat(users[2].uid, users[3].uid, users[2].uid,
+        "Bienvenido Luis Villera, soy Jorge");
+    createChat(users[3].uid, users[2].uid, users[3].uid,
+        "Gracias Jorge, soy de Monteria");
   }
 }

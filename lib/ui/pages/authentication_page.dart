@@ -12,9 +12,10 @@ class AuthenticationPage extends StatelessWidget {
 
   void signIn() async {
     // aquí creamos los tres usuarios
-    await authenticationController.signup('a@a.com', '123456');
-    await authenticationController.signup('b@b.com', '123456');
-    await authenticationController.signup('c@c.com', '123456');
+    await authenticationController.signup('luisdiaz@mintic.com', '123456');
+    await authenticationController.signup('katherinreyes@mintic.com', '123456');
+    await authenticationController.signup('jorge@mintic.com', '123456');
+    await authenticationController.signup('luisvillera@mintic.com', '123456');
   }
 
   void login(String user) {
@@ -43,7 +44,7 @@ class AuthenticationPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           onPressed: signIn,
-                          child: const Text("Crear los tres usuarios"),
+                          child: const Text("Crear los 4 usuarios"),
                         ),
                       ),
                       const Padding(
@@ -72,14 +73,19 @@ class AuthenticationPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             ElevatedButton(
-                                onPressed: () => login('a@a.com'),
-                                child: const Text("Ingresar con usuario A")),
+                                onPressed: () => login('luisdiaz@mintic.com'),
+                                child: const Text("Ingresar como Luis Diaz")),
                             ElevatedButton(
-                                onPressed: () => login('b@b.com'),
-                                child: const Text("Ingresar con usuario B")),
+                                onPressed: () =>
+                                    login('katherinreyes@mintic.com'),
+                                child: const Text("Ingresar com Katherin")),
                             ElevatedButton(
-                                onPressed: () => login('c@c.com'),
-                                child: const Text("Ingresar con usuario C")),
+                                onPressed: () => login('jorge@mintic.com'),
+                                child: const Text("Ingresar como Jorge")),
+                            ElevatedButton(
+                                onPressed: () =>
+                                    login('luisvillera@mintic.com'),
+                                child: const Text("Ingresar como luis V.")),
                           ]),
                     ),
                   ),
